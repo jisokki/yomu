@@ -4,7 +4,7 @@
 #include "SPI.h"
 #include "SD.h"
 #include "FS.h"
-#include "boootloader_random.h"
+#include "bootloader_random.h"
 
 
 // Digital I/O used
@@ -22,8 +22,8 @@
 #define BTN_B   10
 
 // Debounce Handling
-const int kDebounceTime = 100; // 100 ms
-int cLastDebounce = 0;
+const uint32_t kDebounceTime = 2400000; // 10 ms at 240MHz
+uint32_t cLastDebounce = 0;
 
 bool checkDebounce() {
     if(cLastDebounce >= kDebounceTime) {
